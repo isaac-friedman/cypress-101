@@ -1,4 +1,9 @@
 describe("Login form using Zero Bank Example site", () => {
+  it("Takes us back before COVID" , () => {
+    const date = new Date(2020, 12, 25).getTime();
+    cy.clock(date) //sets cypress's time to our date object
+    cy.log(date)
+  })
   it("Visits the Login page", () => {
     cy.visit('http://zero.webappsecurity.com/login.html');
     cy.url().should('include', 'login.html')
