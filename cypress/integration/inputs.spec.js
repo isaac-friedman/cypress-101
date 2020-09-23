@@ -4,7 +4,7 @@ describe("Login form using Zero Bank Example site", () => {
     cy.url().should('include', 'login.html')
   });
   it("Fills the username", () => {
-    cy.get('#user_login').as('un'); 
+    cy.get('#user_login').as('un');
     cy.get('@un').clear()//In case of placeholder
     cy.get('@un').type('jschmoe');
   });
@@ -19,6 +19,6 @@ describe("Login form using Zero Bank Example site", () => {
     cy.contains('Sign in').click() //HORRIBLE anti pattern
   });
   it("displays the error message", () => { //Should really be a .then after the form submission
-    cy.get('.alert-error').should('be.visible')
+    cy.get('.alert-error').should('be.visible').and('contain', "Login and/or password are wrong.")
   });
 })
