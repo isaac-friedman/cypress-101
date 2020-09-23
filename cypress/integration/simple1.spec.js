@@ -9,5 +9,9 @@ describe("Browser Actions", () => {
       .contains('Science Fiction') //BAD idea to select on text that can always change
       .click()
     cy.url().should('include', 'science-fiction'); //verify
+  });
+
+  it("Should display correct number of results",  () => {
+    cy.get('.product_pod').its('length').should('eq', 16);
   })
 })
