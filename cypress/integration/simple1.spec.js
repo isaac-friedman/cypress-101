@@ -2,6 +2,9 @@ describe("Browser Actions", () => {
   it("Should load our scraper playground", () => {
     cy.visit("http://books.toscrape.com/index.html", () => {
       cy.url().should("include", "index.html") //Always verify
+      cy.log("before refresh")
+      cy.reload()
+      cy.log("After Reload")
     });
   });
   it("Should go to the Science Fiction section", () => {
