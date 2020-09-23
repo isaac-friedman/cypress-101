@@ -15,9 +15,9 @@ describe("Login form using Zero Bank Example site", () => {
     //TODO
   });
   it("submits the form", () => {
-    //TODO
+    cy.contains('Sign in').click() //HORRIBLE anti pattern
   });
   it("displays the error message", () => {
-    //TODO
+    cy.get('.alert-error').should('be.visible')
   });
 })
