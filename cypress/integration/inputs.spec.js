@@ -4,8 +4,9 @@ describe("Login form using Zero Bank Example site", () => {
     cy.url().should('include', 'login.html')
   });
   it("Fills the username", () => {
-    cy.get('#user_login').clear()//In case of placeholder
-    cy.get('#user_login').type('jschmoe');
+    cy.get('#user_login').as('un'); 
+    cy.get('@un').clear()//In case of placeholder
+    cy.get('@un').type('jschmoe');
   });
   it("Fills the password", () => {
     cy.get('#user_password').clear()
