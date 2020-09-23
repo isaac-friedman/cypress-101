@@ -29,3 +29,12 @@ describe("Visiting URLs", () => {
     cy.get('h6').should('be.visible');
   });
 })
+
+describe("Pause & Wait", () => {
+  it("Waits 3 seconds", () => {
+    cy.wait(3000);
+  });
+  it("Pauses execution", () => {
+    cy.pause()
+  })
+})
