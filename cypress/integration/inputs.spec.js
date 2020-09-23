@@ -12,7 +12,7 @@ describe("Login form using Zero Bank Example site", () => {
     cy.get('#user_password').type('Asdf!2345')
   });
   it("Checks remember-me box", () => {
-    //TODO
+    cy.get('#user_remember_me').check()
   });
   it("submits the form", () => {
     cy.contains('Sign in').click() //HORRIBLE anti pattern
