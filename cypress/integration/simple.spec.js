@@ -15,10 +15,17 @@ describe("Breaking up describe blocks is helpful for readability", () => {
 });
 
 describe("Visiting URLs", () => {
+  it("Illustrates the timeout property", () => {
+    cy.visit('https://exampel.com', {timeout: 10000}) //milliseconds
+  });
+
   it("Goes to example.com", () => {
     cy.visit('https://example.com');
   });
-  it("Illustrates the timeout property", () => {
-    cy.visit('https://exampel.com', {timeout: 10000}) //milliseconds
-  })
+  it("Illustrates the most simple assertions", () => {
+    cy.get('h1').should('be.visible');
+  });
+  it("Illustrates a failed assertion", () => {
+    cy.get('h6').should('be.visible');
+  });
 })
