@@ -19,8 +19,13 @@ class HomePage extends BasePage {
 }
 
 describe("Abstraction with classes in cypress", () => {
-  it("scrolls up and down a HomePage class", () => {
+  before(function() {
+    //runs before all tests in the describe
     HomePage.visitHomePage()
+  })
+
+  
+  it("scrolls up and down a HomePage class", () => {
     HomePage.scrollToButton()
     HomePage.wait(3000)
     HomePage.scrollToTop()
