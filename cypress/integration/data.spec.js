@@ -7,5 +7,10 @@ describe("File I/O in cypress", () => {
     cy.readFile("log.json") //verify data from last test
       .its('age')
       .should('eq', 30)
-    })
+  })
+  it("Reads and verifies browser document content", () => {
+    cy.visit("https://example.com");
+    cy.wait(2000);
+    cy.document().its('contentType').should('eq', 'text/html')
+  })
 })
