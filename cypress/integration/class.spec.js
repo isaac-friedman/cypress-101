@@ -24,7 +24,18 @@ describe("Abstraction with classes in cypress", () => {
     HomePage.visitHomePage()
   })
 
-  
+  after( () => {
+    //runs at the very end of the describe block
+    cy.log("Look! classes!")
+  })
+
+  beforeEach( () => {
+    //runs before EACH it
+  })
+
+  afterEach(() => {
+    //runs after EACH it
+  })
   it("scrolls up and down a HomePage class", () => {
     HomePage.scrollToButton()
     HomePage.wait(3000)
